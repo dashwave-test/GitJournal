@@ -27,9 +27,7 @@ class SearchInfo {
     text = text.toLowerCase();
 
     var matches = text.toLowerCase().allMatches(body).toList();
-    return SearchInfo(numMatches: matches.length);
-
-    // FIXME: Give the current match!!
+    return SearchInfo(numMatches: matches.length, currentMatch: matches.isNotEmpty ? 0: 0);
   }
 }
 
@@ -246,3 +244,4 @@ void scrollToSearchResult({
     curve: decelerateEasing,
   );
 }
+
