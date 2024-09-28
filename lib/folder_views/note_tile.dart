@@ -92,7 +92,7 @@ class NoteTile extends StatelessWidget {
       type: MaterialType.card,
       child: InkWell(
         borderRadius: borderRadius,
-        onTap: () => noteTapped(note),
+        onTap: () => noteTapped(note, searchTerm),
         onLongPress: () => noteLongPressed(note),
         child: Hero(
           tag: note.filePath,
@@ -151,3 +151,4 @@ class NoteTile extends StatelessWidget {
     );
   }
 }
+
