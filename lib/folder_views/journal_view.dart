@@ -148,7 +148,7 @@ class JournalNoteListTile extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: children,
       ),
-      onTap: () => noteTapped(note),
+      onTap: () => noteTapped(note, searchTerm),
       onLongPress: () => noteLongPressed(note),
     );
 

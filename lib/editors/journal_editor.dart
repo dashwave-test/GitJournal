@@ -76,6 +76,19 @@ class JournalEditorState extends State<JournalEditor>
     _heuristics = EditorHeuristics(text: _note.body);
     _scrollController = ScrollController(keepScrollOffset: false);
     _undoRedoStack = UndoRedoStack();
+    
+    if (widget.highlightString != null && widget.highlightString!.isNotEmpty) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        scrollToSearchResult(
+          scrollController: _scrollController,
+          textController: _textController,
+          textEditorKey: _editorKey,
+          textStyle: NoteBodyEditor.textStyle(context),
+          searchText: widget.highlightString!,
+          resultNum: 0,
+        );
+      });
+    }
   }
 
   @override
